@@ -5,9 +5,9 @@ import "fmt"
 const minProductNamelen = 3
 
 type Product struct {
-	SKU  string `json:"sku"`
-	Name string `json:"name"`
-	Slug string `json:"slug"`
+	SKU  string `bson:"sku" json:"sku"`
+	Name string `bson:"name" json:"name"`
+	Slug string `bson:"slug" json:"slug"`
 }
 
 type CreateProductRequest struct {
