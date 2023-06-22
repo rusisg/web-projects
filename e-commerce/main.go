@@ -19,10 +19,10 @@ func main() {
 		panic(err)
 	}
 
-	productStore := store.NewMongoProductStore(client)
+	productStore := store.NewMongoProductStore(client.Database("e-commerce"))
 	productHandler := api.NewProductHandler(productStore)
 
-	adminRoute.Get("/product", productHandler.HandleGetProduct)
+	adminRoute.Get("/product/:id", productHandler.HandleGetProductByID)
 	adminRoute.Post("/product", productHandler.HandlePostProduct)
 
 	app.Serve(3001)
