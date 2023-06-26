@@ -16,7 +16,8 @@ type MongoProductStore struct {
 
 func NewMongoProductStore(db *mongo.Database) *MongoProductStore {
 	return &MongoProductStore{
-		db: db,
+		db:   db,
+		coll: "products",
 	}
 }
 

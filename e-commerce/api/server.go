@@ -38,5 +38,9 @@ func (h *ProductHandler) HandlePostProduct(c *weavebox.Context) error {
 }
 
 func (h *ProductHandler) HandleGetProductByID(c *weavebox.Context) error {
-	return c.JSON(http.StatusOK, &types.Product{SKU: "DRESS-1111"})
+	return c.JSON(http.StatusOK, &types.Product{
+		SKU:  "shoe-111",
+		Name: "NIgger",
+		Slug: "/shoe-111",
+	})
 }
